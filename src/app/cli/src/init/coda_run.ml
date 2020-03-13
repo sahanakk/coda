@@ -122,7 +122,7 @@ let get_current_fork_id ~compile_time_current_fork_id ~conf_dir ~logger =
            config; please delete your Coda config if you wish to use a new \
            fork ID" )
     with Sys_error _ ->
-      (* use value provided on command line, write to config dir, possibly overwriting existing entry *)
+      (* use value provided on command line, write to config dir *)
       write_fork_id fork_id ;
       Logger.info logger ~module_:__MODULE__ ~location:__LOC__
         "Using current fork ID $fork_id from command line, writing to config"
@@ -167,7 +167,7 @@ let get_next_fork_id_opt ~conf_dir ~logger =
            config; please delete your Coda config if you wish to use a new \
            fork ID" )
     with Sys_error _ ->
-      (* use value provided on command line, write to config dir, possibly overwriting existing entry *)
+      (* use value provided on command line, write to config dir *)
       write_fork_id fork_id ;
       Logger.info logger ~module_:__MODULE__ ~location:__LOC__
         "Using next fork ID $fork_id from command line, writing to config"
